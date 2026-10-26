@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Соберите свой букет — Цветочная «Пион»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);
+  --bg:#F2F5F0;--card:#FFFFFF;--text:#1D2E22;--muted:#5D6F61;--accent:#22442F;--hl:#B9506A;--on-hl:#FFFFFF;--chip:#E3ECE3;--line:rgba(29,46,34,.12);--stage:#E6EEE4;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111914;--card:#1A241D;--text:#E7F0E9;--muted:#A6BCAB;--accent:#A7D3B1;--hl:#D46A82;--chip:#24342A;--line:rgba(231,240,233,.13);--stage:#1E2B22;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111914;--card:#1A241D;--text:#E7F0E9;--muted:#A6BCAB;--accent:#A7D3B1;--hl:#D46A82;--chip:#24342A;--line:rgba(231,240,233,.13);--stage:#1E2B22;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:22px 16px 0}
+.shop{text-align:center;color:var(--muted);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin:0}
+h1{font:italic 600 clamp(34px,9vw,50px)/1.05 Cormorant,Georgia,serif;text-align:center;margin:6px 0;color:var(--accent)}
+.lead{text-align:center;color:var(--muted);margin:0 0 20px}
+.layout{display:grid;gap:16px}
+.stage{background:var(--stage);border-radius:24px;padding:12px}
+.stage svg{display:block;width:100%;height:auto;max-height:320px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:12px}
+.step h2{font:700 15px Manrope,sans-serif;margin:0 0 10px;display:flex;justify-content:space-between;gap:8px}
+.step h2 span{color:var(--muted);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:flex;align-items:center;gap:8px;border:1.5px solid transparent;background:var(--chip);color:var(--text);border-radius:12px;padding:8px 12px;cursor:pointer;font:500 14px/1.3 Manrope,sans-serif;text-align:left}
+.chip small{display:block;color:var(--muted);font-weight:400;font-size:12px}
+.chip i{flex:none;font-style:normal;display:flex;gap:2px;align-items:center}
+.chip i b{width:12px;height:12px;border-radius:50%;border:1px solid var(--line);display:block}
+.chip[aria-pressed="true"]{border-color:var(--hl);background:var(--card)}
+.chip[aria-pressed="true"] small{color:var(--hl)}
+.size{min-width:64px;font:italic 600 22px Cormorant,Georgia,serif}
+input[type=date]{width:100%;font:500 16px Manrope,sans-serif;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.note{color:var(--muted);font-size:13px;margin:8px 0 0}
+button:focus-visible,input:focus-visible{outline:2px solid var(--hl);outline-offset:2px}
+.bar{position:sticky;bottom:0;background:var(--card);border-top:1px solid var(--line);margin-top:6px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));box-shadow:0 -8px 24px rgba(0,0,0,.06)}
+.bar .in{max-width:980px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.mini{width:56px;height:56px;border-radius:12px;background:var(--stage);flex:none;overflow:hidden}
+.mini svg{width:100%;height:100%}
+.total{flex:1}
+.total small{display:block;color:var(--muted);font-size:12px}
+.total b{font:italic 600 30px Cormorant,Georgia,serif;color:var(--accent)}
+.cta{border:0;background:var(--hl);color:var(--on-hl);font:700 16px Manrope,sans-serif;padding:14px 18px;border-radius:14px;cursor:pointer}
+.done{text-align:center;padding:4px 0 40px;max-width:560px;margin:0 auto}
+.tg{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;text-align:left;margin:18px 0;white-space:pre-line;font-size:15px}
+.tg .who{font-weight:700;color:var(--accent);margin-bottom:6px;white-space:normal}
+.foot{text-align:center;color:var(--muted);font-size:13px;padding:20px 16px 26px}
+.foot b{color:var(--text)}
+.foot a{color:inherit;text-decoration:none}
+.pop{animation:pop .35s ease}@keyframes pop{50%{transform:scale(1.06)}}
+@media (prefers-reduced-motion:reduce){.pop{animation:none}}
+@media (min-width:860px){.layout{grid-template-columns:1fr 1fr;align-items:start}.stage{position:sticky;top:calc(16px + env(safe-area-inset-top,0px))}.stage svg{max-height:none}.mini{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<div class="bar" id="bar"><div class="in">
+  <div class="mini" id="mini" aria-hidden="true"></div>
+  <div class="total"><small>Примерная стоимость</small><b id="total">0 ₽</b></div>
+  <button class="cta" id="send">Отправить заявку</button>
+</div></div>
+<p class="foot">Это демо. Хотите такой калькулятор под свой прайс?<br>Телеграм: <a href="https://t.me/darya_koshcheewa" target="_blank" rel="noopener"><b>@darya_koshcheewa</b></a><br>Трэдс: <a href="https://www.threads.com/@dashaka_dashaka" target="_blank" rel="noopener"><b>@dashaka_dashaka</b></a></p>
+<script>
+const rub=n=>Math.round(n).toLocaleString("ru-RU")+" ₽";
+const SIZE=[["S",2900,"7–9 цветков",7],["M",4500,"11–15 цветков",12],["L",6900,"19–25 цветков",19],["XL",9900,"35+ цветков",30]];
+const KIND=[["Сезонный микс",1,"mix"],["Розы",1.1,"rose"],["Пионовидные розы",1.25,"peony"],["Эустома",1.15,"eus"]];
+const GAMMA=[["Нежная",["#F6C9D2","#FBE3E8","#F2B0C2","#FFF8F4"]],["Яркая",["#E5394F","#F28C28","#C2185B","#F6C343"]],["Белая",["#FFFFFF","#F4F0E6","#EDE6D6","#FAFAF5"]],["На вкус флориста",["#F2B0C2","#F6C343","#FFFFFF","#C9A0DC"]]];
+const PACK=[["Крафт",0,"kraft"],["Корейская пленка",300,"film"],["Шляпная коробка",900,"box"],["Корзина",1200,"basket"]];
+const EXTRA=[["Открытка",150,"💌"],["Конфеты",700,"🍬"],["Шар",450,"🎈"],["Доставка",500,"🚚"]];
+let s,sent=false;
+function init(){s={z:SIZE[1],k:KIND[0],g:GAMMA[0],p:PACK[0],x:[],date:"",min:new Date().toISOString().slice(0,10)};sent=false}
+const price=()=>s.z[1]*s.k[1]+s.p[1]+s.x.reduce((a,o)=>a+o[1],0);
+const has=n=>s.x.some(o=>o[0]===n);
+const shade="rgba(60,20,30,.14)";
+
+function flower(t,x,y,r,c){
+  if(t==="rose")return `<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/><circle cx="${x}" cy="${y}" r="${r*.7}" fill="${shade}"/><circle cx="${x}" cy="${y}" r="${r*.55}" fill="${c}"/><path d="M${x-r*.3} ${y} a${r*.3} ${r*.3} 0 1 1 ${r*.3} ${r*.3}" stroke="${shade}" stroke-width="2" fill="none"/>`;
+  if(t==="peony"){let o="";for(let k=0;k<7;k++){const a=k*.8976;o+=`<circle cx="${x+Math.cos(a)*r*.55}" cy="${y+Math.sin(a)*r*.55}" r="${r*.58}" fill="${c}" stroke="${shade}" stroke-width="1"/>`}return o+`<circle cx="${x}" cy="${y}" r="${r*.5}" fill="${c}"/><circle cx="${x}" cy="${y}" r="${r*.28}" fill="${shade}"/>`}
+  if(t==="eus"){let o="";for(let k=0;k<5;k++){const a=k*72;o+=`<ellipse cx="${x}" cy="${y-r*.45}" rx="${r*.42}" ry="${r*.6}" fill="${c}" stroke="${shade}" stroke-width="1" transform="rotate(${a} ${x} ${y})"/>`}return o+`<circle cx="${x}" cy="${y}" r="${r*.22}" fill="#6B4E7A"/>`}
+  let o="";for(let k=0;k<8;k++){o+=`<ellipse cx="${x}" cy="${y-r*.55}" rx="${r*.22}" ry="${r*.5}" fill="${c}" stroke="${shade}" stroke-width=".8" transform="rotate(${k*45} ${x} ${y})"/>`}return o+`<circle cx="${x}" cy="${y}" r="${r*.3}" fill="#F2B632"/>`;
+}
+function bouquet(){
+  const n=s.z[3],pk=s.p[2],cx=150,cy=pk==="box"?150:pk==="basket"?156:120,R=17*Math.sqrt(n),fr=n>20?15:17;
+  const pal=s.g[1],types=["rose","peony","eus","daisy"];let g="";
+  if(pk==="basket")g+=`<path d="M78 ${cy+18} Q150 ${cy-R-60} 222 ${cy+18}" stroke="#8A5A2E" stroke-width="8" fill="none"/>`;
+  if(pk==="kraft")g+=`<polygon points="${cx-R-28},${cy-10} ${cx+R+28},${cy-10} ${cx+18},300 ${cx-18},300" fill="#B88E66"/>`;
+  if(pk==="film")g+=`<polygon points="${cx-R-34},${cy-24} ${cx+R+34},${cy-24} ${cx+20},300 ${cx-20},300" fill="#F7D9E0" stroke="#E7B8C4"/><polygon points="${cx-R-18},${cy-4} ${cx+R+18},${cy-4} ${cx+16},300 ${cx-16},300" fill="#FFFFFF" opacity=".85" stroke="#EBD3D9"/>`;
+  for(let k=0;k<12;k++){const a=k*Math.PI*2/12,lx=cx+Math.cos(a)*(R+4),ly=cy+Math.sin(a)*(R+4)*.85,deg=a*180/Math.PI+90;g+=`<ellipse cx="${lx}" cy="${ly}" rx="8" ry="20" fill="${k%2?"#4E7D57":"#6E9C66"}" transform="rotate(${deg} ${lx} ${ly})"/>`}
+  for(let i=0;i<n;i++){const r=R*Math.sqrt((i+.5)/n),a=i*2.39996,x=cx+r*Math.cos(a),y=cy+r*Math.sin(a)*.85;
+    const t=s.k[2]==="mix"?types[i%4]:s.k[2];g+=flower(t,Math.round(x*10)/10,Math.round(y*10)/10,t==="peony"?fr*1.1:fr,pal[i%pal.length])}
+  if(has("Шар"))g+=`<path d="M44 70 Q52 120 ${cx-R*.5} ${cy+R*.3}" stroke="#7E8C80" stroke-width="1.5" fill="none"/><ellipse cx="40" cy="36" rx="26" ry="31" fill="#D94F70"/><ellipse cx="31" cy="25" rx="7" ry="10" fill="#FFFFFF" opacity=".45"/><path d="M36 66 l4 6 4 -6z" fill="#D94F70"/>`;
+  if(pk==="kraft")g+=`<polygon points="${cx-R-14},${cy+R*.75} ${cx+R+14},${cy+R*.75} ${cx+18},300 ${cx-18},300" fill="#C9A27A"/><path d="M${cx-22} 250 q-22 -14 -26 4 q14 10 26 -4z M${cx+22} 250 q22 -14 26 4 q-14 10 -26 -4z" fill="#B9506A"/><circle cx="${cx}" cy="250" r="7" fill="#9E3F57"/>`;
+  if(pk==="film")g+=`<polygon points="${cx-R-6},${cy+R*.75} ${cx+R+6},${cy+R*.75} ${cx+16},300 ${cx-16},300" fill="#FBE7EC" opacity=".9" stroke="#E7B8C4"/><path d="M${cx-22} 252 q-22 -14 -26 4 q14 10 26 -4z M${cx+22} 252 q22 -14 26 4 q-14 10 -26 -4z" fill="#E38FA6"/><circle cx="${cx}" cy="252" r="7" fill="#C76E86"/>`;
+  if(pk==="box")g+=`<rect x="${cx-74}" y="${cy+12}" width="148" height="${300-cy-14}" rx="8" fill="#22442F"/><ellipse cx="${cx}" cy="${cy+12}" rx="74" ry="12" fill="#2E5A3E"/><rect x="${cx-74}" y="${cy+44}" width="148" height="10" fill="#B9506A"/><text x="${cx}" y="${cy+90}" text-anchor="middle" font-family="Cormorant,Georgia,serif" font-style="italic" font-size="22" fill="#E6EEE4">Пион</text>`;
+  if(pk==="basket"){g+=`<path d="M70 ${cy+16} L230 ${cy+16} L208 300 L92 300 Z" fill="#B07A45"/>`;for(let k=1;k<5;k++){const y=cy+16+k*(284-cy)/5;g+=`<line x1="${74+k*4}" y1="${y}" x2="${226-k*4}" y2="${y}" stroke="#8A5A2E" stroke-width="3"/>`}g+=`<rect x="66" y="${cy+10}" width="168" height="12" rx="6" fill="#8A5A2E"/>`}
+  if(has("Открытка"))g+=`<g transform="rotate(12 238 214)"><rect x="216" y="196" width="46" height="34" rx="3" fill="#FFFFFF" stroke="#D9CFC8"/><path d="M239 220 c-8 -6 -8 -12 -3 -13 c2 0 3 1 3 3 c0 -2 1 -3 3 -3 c5 1 5 7 -3 13z" fill="#B9506A"/></g>`;
+  if(has("Конфеты"))g+=`<rect x="22" y="262" width="52" height="34" rx="4" fill="#E6A817"/><rect x="44" y="262" width="8" height="34" fill="#B9506A"/><path d="M48 262 q-12 -12 -16 0z M48 262 q12 -12 16 0z" fill="#B9506A"/>`;
+  if(has("Доставка"))g+=`<g><rect x="226" y="262" width="44" height="30" rx="4" fill="#B9506A"/><text x="248" y="282" text-anchor="middle" font-family="Cormorant,Georgia,serif" font-style="italic" font-size="13" fill="#FFFFFF">Пион</text><path d="M270 270 h14 l10 11 v11 h-24z" fill="#22442F"/><path d="M274 273 h9 l6 7 h-15z" fill="#CFE3D3"/><circle cx="238" cy="294" r="7" fill="#1D2E22"/><circle cx="238" cy="294" r="3" fill="#D9D9D9"/><circle cx="282" cy="294" r="7" fill="#1D2E22"/><circle cx="282" cy="294" r="3" fill="#D9D9D9"/></g>`;
+  return `<svg viewBox="0 0 300 310" role="img" aria-label="Так будет выглядеть ваш букет">${g}</svg>`;
+}
+function chip(gr,o,k,on,icon,sub,cls=""){return `<button class="chip" aria-pressed="${on}" data-g="${gr}" data-k="${k}">${icon}<span class="${cls}">${o[0]}<small style="font-style:normal;font-family:Manrope,sans-serif">${sub}</small></span></button>`}
+function render(){
+  const app=document.getElementById("app");document.getElementById("bar").style.display=sent?"none":"";
+  if(sent){app.innerHTML=`<div class="done"><p class="shop">Цветочная «Пион»</p><h1>Заявка отправлена</h1><p class="lead">Спасибо! Флорист скоро напишет вам, чтобы обсудить все детали</p>
+    <div class="stage">${bouquet()}</div>
+    <div class="tg"><div class="who">🔔 Так заявка придет флористу в Telegram</div>Новая заявка с сайта
+Букет ${s.z[0]}, ${s.k[0].toLowerCase()}, гамма: ${s.g[0].toLowerCase()}
+Упаковка: ${s.p[0].toLowerCase()}${s.x.length?"\nДополнительно: "+s.x.map(o=>o[0].toLowerCase()).join(", "):""}${s.date?"\nДата: "+new Date(s.date).toLocaleDateString("ru-RU",{day:"numeric",month:"long"}):""}
+Сумма: ${rub(price())}</div><button class="cta" id="again">Собрать еще один</button></div>`;
+    document.getElementById("again").onclick=()=>{init();render();scrollTo(0,0)};return}
+  app.innerHTML=`<p class="shop">Цветочная «Пион»</p><h1>Соберите свой букет</h1><p class="lead">Подберите букет для особенного человека: выберите размер, цветы и упаковку, а мы сразу покажем, как он будет выглядеть и сколько стоит</p>
+  <div class="layout"><div class="stage" id="stage"></div><div>
+   <div class="step"><h2>Размер</h2><div class="chips">${SIZE.map((o,k)=>chip("z",o,k,s.z===o,"",o[2]+", от "+o[1]+" ₽","size")).join("")}</div></div>
+   <div class="step"><h2>Основные цветы</h2><div class="chips">${KIND.map((o,k)=>chip("k",o,k,s.k===o,"",o[1]>1?"+"+Math.round((o[1]-1)*100)+"% к цене":"базовая цена")).join("")}</div></div>
+   <div class="step"><h2>Гамма</h2><div class="chips">${GAMMA.map((o,k)=>chip("g",o,k,s.g===o,`<i>${o[1].slice(0,3).map(c=>`<b style="background:${c}"></b>`).join("")}</i>`,"без доплаты")).join("")}</div></div>
+   <div class="step"><h2>Упаковка</h2><div class="chips">${PACK.map((o,k)=>chip("p",o,k,s.p===o,"",o[1]?"+"+o[1]+" ₽":"входит в цену")).join("")}</div></div>
+   <div class="step"><h2>Дополнить<span>можно несколько</span></h2><div class="chips">${EXTRA.map((o,k)=>chip("x",o,k,s.x.includes(o),`<i>${o[2]}</i>`,"+"+o[1]+" ₽")).join("")}</div></div>
+   <div class="step"><h2>Когда нужен</h2><input type="date" id="date" min="${s.min}" value="${s.date}" aria-label="Дата"><p class="note">Соберем в день доставки, чтобы цветы были свежими</p></div>
+  </div></div>`;
+  update(false);
+}
+function update(anim){const svg=bouquet();const st=document.getElementById("stage");if(st)st.innerHTML=svg;document.getElementById("mini").innerHTML=svg;
+  const t=document.getElementById("total");t.textContent=rub(price());if(anim){t.classList.remove("pop");void t.offsetWidth;t.classList.add("pop")}}
+const LISTS={z:SIZE,k:KIND,g:GAMMA,p:PACK};
+document.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;const k=+b.dataset.k,g=b.dataset.g;
+  if(g==="x"){const o=EXTRA[k],i=s.x.indexOf(o);i<0?s.x.push(o):s.x.splice(i,1);b.setAttribute("aria-pressed",i<0)}
+  else{s[g]=LISTS[g][k];b.parentNode.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b))}
+  update(true)});
+document.addEventListener("input",e=>{if(e.target.id==="date")s.date=e.target.value});
+document.getElementById("send").onclick=()=>{sent=true;render();scrollTo(0,0)};
+init();render();
+</script>
+</body>
+</html>
